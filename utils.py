@@ -243,7 +243,7 @@ def generate_proposal(anchors, offsets):
 
 
 @torch.no_grad()
-def assign_label(proposals, bboxes, background_id, pos_thresh=0.52, neg_thresh=0.48, pos_fraction=0.20):
+def assign_label(proposals, bboxes, background_id, pos_thresh=0.51, neg_thresh=0.49, pos_fraction=0.22):
     """
     Determine the activated (positive) and negative proposals for model training.
 

@@ -26,10 +26,10 @@ from utils import coord_trans, data_visualizer
 def parse_args():
     parser = argparse.ArgumentParser('Faster R-CNN', add_help=False)
     parser.add_argument('--lr', default=1.0e-3, type=float)
-    parser.add_argument('--lr_decay', default=0.97, type=float)
-    parser.add_argument('--weight_decay',default=0.0001, type=float)
+    parser.add_argument('--lr_decay', default=0.95, type=float)
+    parser.add_argument('--weight_decay',default=0.00015, type=float)
     parser.add_argument('--batch_size', default=32, type=int)
-    parser.add_argument('--epochs', default=200, type=int)
+    parser.add_argument('--epochs', default=250, type=int)
     parser.add_argument('--num_workers', default=16, type=int)
     parser.add_argument('--overfit_small_data', default=False, action='store_true')
     parser.add_argument('--output_dir', default='./exp/fast_rcnn')
@@ -149,7 +149,7 @@ def train(args, model, train_loader, optimizer, lr_scheduler, start_epoch):
     plt.close()
 
 
-def inference(args, model, val_loader, dataset, thresh=0.4, nms_thresh=0.4, visualize=True):
+def inference(args, model, val_loader, dataset, thresh=0.2, nms_thresh=0.30, visualize=True):
     model.eval()
     start_t = time.time()
 

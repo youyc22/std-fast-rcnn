@@ -103,7 +103,7 @@ class FastRCNN(nn.Module):
         - total_loss: Torch scalar giving the overall training loss.
         """
         w_cls = 1 # for cls_scores
-        w_bbox = 3 # for offsets
+        w_bbox = 2.2 # for offsets
         total_loss = None
         ##############################################################################
         # TODO: Implement the forward pass of Fast R-CNN.                            #
